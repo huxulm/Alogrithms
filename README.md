@@ -1,6 +1,6 @@
 [中文](/README-zh.md)
-# Alogrithms
-Learning alogrithms.
+# Algorithms
+Learning algorithms.
 
 ## Dynamic Programming
   - Fibonacci
