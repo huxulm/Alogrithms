@@ -6,9 +6,8 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_merge_sort(t *testing.T) {
+func TestMergeSort(t *testing.T) {
 	expect := []int{5, 6, 7, 11, 12, 13}
-	arr := []int{12, 11, 13, 5, 6, 7}
-	merge_sort(arr)
-	assert.Equal(t, expect, arr)
+	input := []int{12, 11, 13, 5, 6, 7}
+	assert.Equal(t, expect, MergeSort(input))
 }
