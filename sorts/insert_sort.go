@@ -1,6 +1,6 @@
 package sorts
 
-func insert_sort(arr []int) []int {
+func InsertSort(arr []int) []int {
 	n := len(arr)
 	for i := 1; i < n; i++ {
 		key := arr[i]
