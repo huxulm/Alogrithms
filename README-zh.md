@@ -8,14 +8,15 @@ Learning alogrithms.
   - [Grid Traveler](dynamic-programming/grid_traveler.go)
   - [Can Sum](dynamic-programming/cansum.go)
   - [How Sum](dynamic-programming/howsum.go)
-
-## 接下来...
-* [排序、查找算法]
+# 排序
   * [选择排序](https://www.geeksforgeeks.org/selection-sort/)
   * [冒泡排序](http://geeksquiz.com/bubble-sort/)
   * [插入排序](http://geeksquiz.com/insertion-sort/)
-  * [快速排序](http://geeksquiz.com/quick-sort/)
   * [归并排序](http://geeksquiz.com/merge-sort/)
+
+## 接下来...
+* [排序、查找算法]
+  * [快速排序](http://geeksquiz.com/quick-sort/)
   * [希尔排序](https://www.geeksforgeeks.org/shellsort/)
   * [堆排序](http://geeksquiz.com/heap-sort/)
   * [计数排序](https://www.geeksforgeeks.org/counting-sort/)

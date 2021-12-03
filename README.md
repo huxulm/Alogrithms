@@ -7,14 +7,16 @@ Learning algorithms.
   - Grid Traveler
   - Can Sum
   - How Sum
-
-## TODO
+## Sorting
 * [Sorting](#)
   * [Selection Sort](https://www.geeksforgeeks.org/selection-sort/)
   * [Bubble Sort](http://geeksquiz.com/bubble-sort/)
   * [Insertion Sort](http://geeksquiz.com/insertion-sort/)
-  * [QuickSort](http://geeksquiz.com/quick-sort/)
   * [Merge Sort](http://geeksquiz.com/merge-sort/)
+
+## TODO
+* [Sorting](#)
+  * [QuickSort](http://geeksquiz.com/quick-sort/)
   * [ShellSort](https://www.geeksforgeeks.org/shellsort/)
   * [Heap Sort](http://geeksquiz.com/heap-sort/)
   * [Counting Sort](https://www.geeksforgeeks.org/counting-sort/)
