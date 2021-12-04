@@ -27,3 +27,9 @@ func TestMergeSort(t *testing.T) {
 	input := []int{12, 11, 13, 5, 6, 7}
 	assert.Equal(t, expect, MergeSort(input))
 }
+
+func TestQuickSort(t *testing.T) {
+	input := []int{10, 80, 30, 90, 40, 50, 70}
+	expect := []int{10, 30, 40, 50, 70, 80, 90}
+	assert.Equal(t, expect, QuickSort(input))
+}
