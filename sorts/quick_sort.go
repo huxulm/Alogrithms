@@ -4,7 +4,7 @@ func partition(arr []int, low, high int) int {
 	index := low - 1
 	pivotElement := arr[high]
 	for j := low; j <= high-1; j++ {
-		if arr[j] < pivotElement {
+		if arr[j] <= pivotElement {
 			index++
 			arr[index], arr[j] = arr[j], arr[index]
 		}
