@@ -20,7 +20,7 @@ func quickSortRange(arr []int, low, high int) {
 	if low < high {
 		pivot := partition(arr, low, high)
 		quickSortRange(arr, low, pivot-1)
-		quickSortRange(arr, pivot, high)
+		quickSortRange(arr, pivot+1, high)
 	}
 }
 
