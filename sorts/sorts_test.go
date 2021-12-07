@@ -33,3 +33,21 @@ func TestQuickSort(t *testing.T) {
 	expect := []int{10, 30, 40, 50, 70, 80, 90}
 	assert.Equal(t, expect, QuickSort(input))
 }
+
+func BenchmarkQuickSort(t *testing.B) {
+	input := []int{10, 80, 30, 90, 40, 50, 70}
+	expect := []int{10, 30, 40, 50, 70, 80, 90}
+	assert.Equal(t, expect, QuickSort(input))
+}
+
+func TestHeapSort(t *testing.T) {
+	input := []int{10, 80, 30, 90, 40, 50, 70}
+	expect := []int{10, 30, 40, 50, 70, 80, 90}
+	assert.Equal(t, expect, HeapSort(input))
+}
+
+func BenchmarkHeapSort(t *testing.B) {
+	input := []int{10, 80, 30, 90, 40, 50, 70}
+	expect := []int{10, 30, 40, 50, 70, 80, 90}
+	assert.Equal(t, expect, HeapSort(input))
+}
