@@ -13,12 +13,12 @@ Learning algorithms.
   * [Bubble Sort](http://geeksquiz.com/bubble-sort/)
   * [Insertion Sort](http://geeksquiz.com/insertion-sort/)
   * [Merge Sort](http://geeksquiz.com/merge-sort/)
+  * [QuickSort](http://geeksquiz.com/quick-sort/)
+  * [Heap Sort](http://geeksquiz.com/heap-sort/)
 
 ## TODO
 * [Sorting](#)
-  * [QuickSort](http://geeksquiz.com/quick-sort/)
   * [ShellSort](https://www.geeksforgeeks.org/shellsort/)
-  * [Heap Sort](http://geeksquiz.com/heap-sort/)
   * [Counting Sort](https://www.geeksforgeeks.org/counting-sort/)
   * [Bucket Sort](https://www.geeksforgeeks.org/bucket-sort-2/)
   * [Radix Sort](https://www.geeksforgeeks.org/radix-sort/)

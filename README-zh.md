@@ -13,12 +13,12 @@ Learning alogrithms.
   * [冒泡排序](http://geeksquiz.com/bubble-sort/)
   * [插入排序](http://geeksquiz.com/insertion-sort/)
   * [归并排序](http://geeksquiz.com/merge-sort/)
+  * [快速排序](http://geeksquiz.com/quick-sort/)
+  * [堆排序](http://geeksquiz.com/heap-sort/)
 
 ## 接下来...
 * [排序、查找算法]
-  * [快速排序](http://geeksquiz.com/quick-sort/)
   * [希尔排序](https://www.geeksforgeeks.org/shellsort/)
-  * [堆排序](http://geeksquiz.com/heap-sort/)
   * [计数排序](https://www.geeksforgeeks.org/counting-sort/)
   * [桶排序](https://www.geeksforgeeks.org/bucket-sort-2/)
   * [基数排序](https://www.geeksforgeeks.org/radix-sort/)
