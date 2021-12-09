@@ -20,12 +20,31 @@ var cases = []struct {
 
 func TestLinear(t *testing.T) {
 	for _, c := range cases {
-		assert.Equal(t, c.expect, Linear(c.input, c.target))
+		r, _ := Linear(c.input, c.target)
+		assert.Equal(t, c.expect, r)
 	}
 }
 
 func BenchmarkLinear(b *testing.B) {
 	for _, c := range cases {
-		assert.Equal(b, c.expect, Linear(c.input, c.target))
+		r, _ := Linear(c.input, c.target)
+		assert.Equal(b, c.expect, r)
+	}
+}
+
+func TestBinary(t *testing.T) {
+	var cases = []struct {
+		input  []int
+		target int
+		expect int
+	}{
+		{
+			input:  []int{10, 20, 30, 40, 50, 60, 70, 80, 90, 100},
+			target: 70,
+			expect: 6,
+		},
+	}
+	for _, c := range cases {
+		assert.Equal(t, c.expect, Binary(c.input, c.target))
 	}
 }
