@@ -1,8 +1,8 @@
 package search
 
 func Linear(arr []int, target int) int {
-	for i := 0; i < len(arr); i++ {
-		if arr[i] == target {
+	for i, item := range arr {
+		if item == target {
 			return i
 		}
 	}
