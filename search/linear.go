@@ -1,10 +1,10 @@
 package search
 
-func Linear(arr []int, target int) int {
+func Linear(arr []int, target int) (int, error) {
 	for i, item := range arr {
 		if item == target {
-			return i
+			return i, nil
 		}
 	}
-	return -1
+	return -1, ErrNotFound
 }
