@@ -3,10 +3,10 @@ package sorts
 func partition(arr []int, low, high int) int {
 	index := low - 1
 	pivotElement := arr[high]
-	for j := low; j <= high-1; j++ {
-		if arr[j] <= pivotElement {
+	for i := low; i < high; i++ {
+		if arr[i] <= pivotElement {
 			index++
-			arr[index], arr[j] = arr[j], arr[index]
+			arr[index], arr[i] = arr[i], arr[index]
 		}
 	}
 	arr[index+1], arr[high] = arr[high], arr[index+1]
