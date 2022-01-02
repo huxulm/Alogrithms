@@ -76,3 +76,25 @@ func BstDelete(root *Node, val int) *Node {
 	}
 	return root
 }
+
+func inOrderRecursive(n *Node, traversal *[]int) {
+	if n != nil {
+		inOrderRecursive(n.left, traversal)
+		*traversal = append(*traversal, n.val)
+		inOrderRecursive(n.right, traversal)
+	}
+}
+
+func InOrder(root *Node) []int {
+	traversal := make([]int, 0)
+	inOrderRecursive(root, &traversal)
+	return traversal
+}
+
+func (bst *BSTree) Insert(val int) {
+	bst.Root = Insert(bst.Root, val)
+}
+
+func (bst *BSTree) InOrder() []int {
+	return InOrder(bst.Root)
+}
