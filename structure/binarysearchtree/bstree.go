@@ -1,5 +1,7 @@
 package binarysearchtree
 
+import "errors"
+
 // Preorder: root --> left --> right
 // Inorder: left --> root --> right
 // Postorder: left --> right --> root
@@ -144,3 +146,59 @@ func PostOrder(root *Node) []int {
 func (bst *BSTree) PostOrder() []int {
 	return PostOrder(bst.Root)
 }
+
+func least(node *Node) *Node {
+	if node == nil {
+		return nil
+	}
+	if node.left == nil {
+		return node
+	}
+	return least(node.left)
+}
+
+func removeNode(n *Node, val int) (*Node, error) {
+	if n == nil {
+		return nil, errors.New("Not found")
+	}
+
+	if val > n.val {
+		right, err := removeNode(n.right, val)
+		if err != nil {
+			return nil, err
+		}
+		n.right = right
+	} else if val < n.val {
+		left, err := removeNode(n.left, val)
+		if err != nil {
+			return nil, err
+		}
+		n.left = left
+	} else {
+		if n.left != nil && n.right != nil {
+			// has two childs
+			successor := least(n.right)
+			value := successor.val
+			// remove successor
+			right, err := removeNode(n.right, value)
+			if err != nil {
+				return nil, err
+			}
+			n.right = right
+			n.val = value
+		} else if n.left != nil || n.right != nil {
+			// has 1 child
+			if n.left != nil {
+				n = n.left
+			} else {
+				n = n.right
+			}
+		} else {
+			// no child
+			n = nil
+		}
+	}
+	return n, nil
+}
+
+func (bst *BSTree) Remove()
