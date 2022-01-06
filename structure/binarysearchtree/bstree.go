@@ -201,4 +201,6 @@ func removeNode(n *Node, val int) (*Node, error) {
 	return n, nil
 }
 
-func (bst *BSTree) Remove()
+func (bst *BSTree) Remove(val int) (*Node, error) {
+	return removeNode(bst.Root, val)
+}
