@@ -16,17 +16,36 @@ func TestBinarySearchTree(t *testing.T) {
 		/  \     /  \
 	20   40   60   80
 	*/
-	tree.Insert(50)
-	tree.Insert(30)
-	tree.Insert(40)
-	tree.Insert(20)
-	tree.Insert(80)
-	tree.Insert(60)
-	tree.Insert(70)
+	tree.Insert(1)
+	tree.Insert(6)
+	tree.Insert(4)
+	tree.Insert(3)
+	tree.Insert(5)
+	tree.Insert(8)
+	tree.Insert(2)
+	tree.Insert(7)
 
-	expect := []int{20, 30, 40, 50, 60, 70, 80}
-	result := bst.InOrder(tree.Root)
+	t.Run("Test in-order traversal", func(t *testing.T) {
+		expect := []int{1, 2, 3, 4, 5, 6, 7, 8}
+		result := bst.InOrder(tree.Root)
+		if !reflect.DeepEqual(result, expect) {
+			t.Errorf("Expect: %v but got: %v", expect, result)
+		}
+	})
+
+}
+
+func TestPreorder(t *testing.T) {
+	tree := bst.BSTree{}
+	nums := []int{80, 100, 70, 85, 95, 105, 90}
+
+	for _, n := range nums {
+		tree.Insert(n)
+	}
+
+	result := tree.PreOrder()
+	expect := []int{80, 70, 100, 85, 95, 90, 105}
 	if !reflect.DeepEqual(result, expect) {
-		t.Errorf("Expect: %v but got: %v", expect, result)
+		t.Errorf("Expect: %+v, but got: %+v", expect, result)
 	}
 }

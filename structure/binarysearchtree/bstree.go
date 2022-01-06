@@ -1,5 +1,10 @@
 package binarysearchtree
 
+// Preorder: root --> left --> right
+// Inorder: left --> root --> right
+// Postorder: left --> right --> root
+// Levelorder
+
 type Node struct {
 	val         int
 	left, right *Node
@@ -77,6 +82,7 @@ func BstDelete(root *Node, val int) *Node {
 	return root
 }
 
+// left --> root --> right
 func inOrderRecursive(n *Node, traversal *[]int) {
 	if n != nil {
 		inOrderRecursive(n.left, traversal)
@@ -97,4 +103,44 @@ func (bst *BSTree) Insert(val int) {
 
 func (bst *BSTree) InOrder() []int {
 	return InOrder(bst.Root)
+}
+
+// root --> left --> right
+func preOrderRecursive(n *Node, traversal *[]int) {
+	if n == nil {
+		return
+	}
+	*traversal = append(*traversal, n.val)
+	preOrderRecursive(n.left, traversal)
+	preOrderRecursive(n.right, traversal)
+}
+
+func PreOrder(root *Node) []int {
+	traversal := make([]int, 0)
+	preOrderRecursive(root, &traversal)
+	return traversal
+}
+
+func (bst *BSTree) PreOrder() []int {
+	return PreOrder(bst.Root)
+}
+
+// left --> right --> root
+func postOrderRecursive(n *Node, traversal *[]int) {
+	if n == nil {
+		return
+	}
+	postOrderRecursive(n.left, traversal)
+	postOrderRecursive(n.right, traversal)
+	*traversal = append(*traversal, n.val)
+}
+
+func PostOrder(root *Node) []int {
+	traversal := make([]int, 0)
+	postOrderRecursive(root, &traversal)
+	return traversal
+}
+
+func (bst *BSTree) PostOrder() []int {
+	return PostOrder(bst.Root)
 }
