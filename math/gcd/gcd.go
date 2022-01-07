@@ -3,7 +3,7 @@
 package gcd
 
 // Recursive finds and returns the greatest common divisor of a given integer.
-func Recursive(x, y int) int {
+func Recursive(x, y int64) int64 {
 	if y == 0 {
 		return x
 	}
