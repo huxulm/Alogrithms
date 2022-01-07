@@ -3,7 +3,7 @@ package lcm
 import (
 	"math"
 
-	"github.com/huxulm/alogrithms/math/gcd"
+	"github.com/huxulm/algorithms/math/gcd"
 )
 
 // Lcm returns the lcm of two numbers using the fact that lcm(a,b) * gcd(a,b) = | a * b |

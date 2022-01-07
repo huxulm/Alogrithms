@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/huxulm/alogrithms/structure/hashmap"
+	"github.com/huxulm/algorithms/structure/hashmap"
 )
 
 func TestHashmap(t *testing.T) {

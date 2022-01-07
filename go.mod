@@ -1,4 +1,4 @@
-module github.com/huxulm/alogrithms
+module github.com/huxulm/algorithms
 
 go 1.17
 

@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	bst "github.com/huxulm/alogrithms/structure/binarysearchtree"
+	bst "github.com/huxulm/algorithms/structure/binarysearchtree"
 )
 
 func TestBinarySearchTree(t *testing.T) {
