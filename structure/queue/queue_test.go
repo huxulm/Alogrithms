@@ -3,9 +3,9 @@ package queue
 import "testing"
 
 func TestQueueArray(t *testing.T) {
-	q := &ListQueue{}
 
 	t.Run("Test enqueue", func(t *testing.T) {
+		q := &ListQueue{}
 		q.Enqueue(1)
 		front, err := q.Front()
 		if err != nil {
@@ -20,7 +20,11 @@ func TestQueueArray(t *testing.T) {
 	})
 
 	t.Run("Test dequeue", func(t *testing.T) {
+		q := &ListQueue{}
+		q.Enqueue(1)
 		q.Enqueue(2)
+
+		// FIFO so the front should equal to 1
 		front, err := q.Dequeue()
 		if err != nil {
 			t.Errorf("Got error: %v", err)
