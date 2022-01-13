@@ -18,6 +18,7 @@ func (q *ListQueue) Dequeue() (interface{}, error) {
 	return nil, errors.New("Queue is empty")
 }
 
+// Front returns the first element of queue if or nil if queue is empty
 func (q ListQueue) Front() (interface{}, error) {
 	if !q.IsEmpty() {
 		return q[0], nil
@@ -25,6 +26,7 @@ func (q ListQueue) Front() (interface{}, error) {
 	return nil, errors.New("Queue is empty")
 }
 
+// Front returns the last element of queue if or nil if queue is empty
 func (q ListQueue) Back() (interface{}, error) {
 	if l := q.Len(); l > 0 {
 		return q[l-1], nil
