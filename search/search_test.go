@@ -33,18 +33,13 @@ func BenchmarkLinear(b *testing.B) {
 }
 
 func TestBinary(t *testing.T) {
-	var cases = []struct {
-		input  []int
-		target int
-		expect int
-	}{
-		{
-			input:  []int{10, 20, 30, 40, 50, 60, 70, 80, 90, 100},
-			target: 70,
-			expect: 6,
-		},
+	for _, c := range searchTests {
+		assert.Equal(t, c.expected, Binary(c.data, c.key))
 	}
-	for _, c := range cases {
-		assert.Equal(t, c.expect, Binary(c.input, c.target))
+}
+
+func TestBinaryRecursive(t *testing.T) {
+	for _, c := range searchTests {
+		assert.Equal(t, c.expected, BinaryRecursive(c.data, 0, len(c.data)-1, c.key))
 	}
 }
