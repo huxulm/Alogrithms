@@ -43,3 +43,9 @@ func TestBinaryRecursive(t *testing.T) {
 		assert.Equal(t, c.expected, BinaryRecursive(c.data, 0, len(c.data)-1, c.key))
 	}
 }
+
+func TestBinarySearchRightBound(t *testing.T) {
+	for _, c := range searchTests2 {
+		assert.Equal(t, c.expected, BinarySearchRightBound(c.data, c.key))
+	}
+}
