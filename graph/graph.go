@@ -40,3 +40,7 @@ func (g *Graph) AddWeightEdge(v1, v2, weight int) {
 		g.edges[v2][v1] = weight
 	}
 }
+
+func (g *Graph) V() int {
+	return g.vertices
+}
