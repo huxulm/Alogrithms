@@ -50,27 +50,35 @@ func (k *kmp) Search(s string) int {
 
 func Search(s, p string) int {
 	n, m := len(s), len(p)
+	// 初始化前缀数组，长度等于模式穿长度
 	pi := make([]int, m)
-	// build pi
+	// 构建前缀函数
 	for j, i := 0, 1; i < m; i++ {
+		// 不匹配时j指针回退，i不动
 		for j > 0 && p[i] != p[j] {
 			j = pi[j-1]
 		}
+		// 匹配时j，i同时前进一位
 		if p[i] == p[j] {
 			j++
 		}
+		// 更新前缀数组
 		pi[i] = j
 	}
 
+	// 遍历主串，i为主串指针 j为匹配串指针
 	for i, j := 0, 0; i < n; i++ {
+		// 不匹配，j指针后退到前一个位置
 		for j > 0 && s[i] != p[j] {
 			j = pi[j-1]
 		}
+		// 匹配，j指针前进
 		if s[i] == p[j] {
 			j++
 		}
-		if j == m {
-			return i - m + 1
+		if j == m { // j指针到达模式串末尾，表示完全匹配
+			// 返回主串匹配开始的索引位置
+			return i - j + 1
 		}
 	}
 	return -1
