@@ -47,3 +47,31 @@ func (k *kmp) Search(s string) int {
 	// Not found
 	return -1
 }
+
+func Search(s, p string) int {
+	n, m := len(s), len(p)
+	pi := make([]int, m)
+	// build pi
+	for j, i := 0, 1; i < m; i++ {
+		for j > 0 && p[i] != p[j] {
+			j = pi[j-1]
+		}
+		if p[i] == p[j] {
+			j++
+		}
+		pi[i] = j
+	}
+
+	for i, j := 0, 0; i < n; i++ {
+		for j > 0 && s[i] != p[j] {
+			j = pi[j-1]
+		}
+		if s[i] == p[j] {
+			j++
+		}
+		if j == m {
+			return i - m + 1
+		}
+	}
+	return -1
+}
