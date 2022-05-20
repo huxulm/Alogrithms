@@ -1,27 +1,25 @@
 package sorts
 
-func partition(arr []int, low, high int) int {
-	index := low - 1
-	pivotElement := arr[high]
-	for i := low; i < high; i++ {
-		if arr[i] <= pivotElement {
+func partition(arr []int, lo, hi int) int {
+	index := lo - 1
+	pivot := hi
+	for i := lo; i < hi; i++ {
+		if arr[i] <= arr[pivot] {
 			index++
 			arr[index], arr[i] = arr[i], arr[index]
 		}
 	}
-	arr[index+1], arr[high] = arr[high], arr[index+1]
+	arr[index+1], arr[hi] = arr[hi], arr[index+1]
 	return index + 1
 }
 
-func quickSortRange(arr []int, low, high int) {
-	if len(arr) <= 1 {
+func quickSortRange(arr []int, lo, hi int) {
+	if lo >= hi {
 		return
 	}
-	if low < high {
-		pivot := partition(arr, low, high)
-		quickSortRange(arr, low, pivot-1)
-		quickSortRange(arr, pivot+1, high)
-	}
+	pivot := partition(arr, lo, hi)
+	quickSortRange(arr, lo, pivot-1)
+	quickSortRange(arr, pivot+1, hi)
 }
 
 // QuickSort Sorts the entire array
